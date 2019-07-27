@@ -14,5 +14,6 @@ USER ${username}
 RUN cd ~ \
     && git clone https://github.com/canpok1/dotfiles.git \
     && cd dotfiles \
-    && sh setup.sh
+    && sh setup.sh \
+    && vim -c "call dein#install()" -c "q"
 
