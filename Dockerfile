@@ -17,3 +17,4 @@ RUN cd ~ \
     && sh setup.sh \
     && vim -c "call dein#install()" -c "q"
 
+CMD ["vim", "."]
