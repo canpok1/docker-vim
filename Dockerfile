@@ -15,7 +15,7 @@ RUN cd ~ \
     && git clone https://github.com/canpok1/dotfiles.git \
     && cd dotfiles \
     && sh setup.sh \
-    && vim -c "call dein#install()" -c "q" \
-    && vim -c "GoInstallBinaries" -c "q"
+    && vim -c "silent :call dein#install()" -c "q" \
+    && vim -c "silent :GoInstallBinaries" -c "q"
 
 CMD ["vim", "."]
