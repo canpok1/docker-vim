@@ -1,4 +1,4 @@
-FROM alpine
+FROM golang:1.12-alpine
 
 ARG username="vimuser"
 ARG userpass="vimuser"
@@ -15,6 +15,7 @@ RUN cd ~ \
     && git clone https://github.com/canpok1/dotfiles.git \
     && cd dotfiles \
     && sh setup.sh \
-    && vim -c "call dein#install()" -c "q"
+    && vim -c "call dein#install()" -c "q" \
+    && vim -c "GoInstallBinaries" -c "q"
 
 CMD ["vim", "."]
